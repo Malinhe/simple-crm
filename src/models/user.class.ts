@@ -1,6 +1,7 @@
 export class User {
     firstName: string;
     lastName: string;
+    email: string;
     birthDate: number; //(timestemp)
     street: string;
     zipcode: number;
@@ -9,6 +10,7 @@ export class User {
     constructor(obj?: any) {
         this.firstName = obj ? obj.firstName : ''; //(Short if/else statement, when obj exists then obj.firstName else(the :) empty string)/ ?=if :=else
         this.lastName = obj ? obj.lastName : '';
+        this.email = obj ? obj.email : '';
         this.birthDate = obj ? obj.birthDate : '';
         this.street = obj ? obj.street : '';
         this.zipcode = obj ? obj.zipcode : '';
@@ -19,6 +21,7 @@ export class User {
         return {
              firstName: this.firstName,
              lastName: this.lastName,
+             email: this.email,
              birthDate: this.birthDate,
              street: this.street,
              zipcode: this.zipcode,
