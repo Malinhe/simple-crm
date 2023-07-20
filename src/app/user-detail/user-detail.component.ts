@@ -28,6 +28,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   getUser() {
+  //   if(this.userId) {
     this.firestore
       .collection('users')
       .doc(this.userId)
@@ -36,7 +37,7 @@ export class UserDetailComponent implements OnInit {
         this.user = new User(user);
         console.log('Retrieved User', this.user);
       });  
-  }
+    }
 
   editUserDetail() {
     const dialog = this.dialog.open(DialogEditUserComponent);

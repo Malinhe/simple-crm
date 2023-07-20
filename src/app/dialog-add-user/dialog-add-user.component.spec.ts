@@ -1,6 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DialogAddUserComponent } from './dialog-add-user.component';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { provideAnimations } from '@angular/platform-browser/animations';
+
 
 describe('DialogAddUserComponent', () => {
   let component: DialogAddUserComponent;
@@ -8,7 +18,14 @@ describe('DialogAddUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogAddUserComponent ]
+      declarations: [ DialogAddUserComponent ],
+      imports: [ MatDialogModule, FormsModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule, AngularFireModule.initializeApp(environment.firebase) ],
+      providers: [
+        provideAnimations(),
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },]
     })
     .compileComponents();
 

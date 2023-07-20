@@ -11,7 +11,7 @@ import { User } from 'src/models/user.class';
 export class DialogEditUserComponent {
   constructor(public dialogRef: MatDialogRef<DialogEditUserComponent>, private firestore: AngularFirestore) { }
 
-  user: User;
+  user: User = new User();
   userId: string;
   birthDate: Date;
   loading: boolean = false;
